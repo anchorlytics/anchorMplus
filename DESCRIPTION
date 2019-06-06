@@ -15,3 +15,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://mplus.anchorlytics.com, https://github.com/anchorlytics/anchorMplus
 BugReports: https://github.com/anchorlytics/anchorMplus/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
