@@ -3,12 +3,13 @@
 #' Word wrap to accommodate Mplus line length limitations.
 #'
 #' Mplus input syntax is limited to 90 characters on a line.
-#' This function is a wrapper around base::strwrap with reasonable defaults.
+#' This function is a wrapper around \code{\link[base]{strwrap}}
+#' with reasonable defaults.
 #'
 #' @param x a character vector
-#' @param width passed to [base::strwrap()]
-#' @param exdent passed to [base::strwrap()]
-#' @param ... passed to [base::strwrap()]
+#' @param width passed to \code{\link[base]{strwrap}}
+#' @param exdent passed to \code{\link[base]{strwrap}}
+#' @param ... passed to \code{\link[base]{strwrap}}
 #' @return a single string, potentially with newlines
 #'
 #' @export
