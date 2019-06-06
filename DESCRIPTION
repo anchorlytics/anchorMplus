@@ -2,7 +2,15 @@ Package: anchorMplus
 Title: R interface to Mplus
 Version: 0.0.0.9000
 Authors@R: as.person("Sean Ho <anchor@seanho.com> [aut, cre]")
-Description: Prepare data and syntax for Mplus and parse output.
+Description: Mplus is leading commercial software for structural equation
+  modelling (SEM).  It is, however, rather particular in its input requirements,
+  and its output is hard to parse.  It is a command-line program that reads
+  and writes text files.  This package aims to ease the integration of Mplus
+  with R, allowing one to leverage R for data munging, graphing, etc., and
+  invoke Mplus for the SEM fit.
+  This package is heavily inspired by and owes a great debt to
+  Michael Hallquist's MplusAutomation package.
 License: MIT
 Encoding: UTF-8
 LazyData: true
+URL: https://mplus.anchorlytics.com, https://github.com/anchorlytics/anchorMplus
