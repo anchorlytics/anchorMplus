@@ -19,3 +19,9 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Imports: 
+    stats,
+    dplyr,
+    purrr,
+    MplusAutomation,
+    stringi
