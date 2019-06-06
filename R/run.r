@@ -22,7 +22,7 @@
 #' @family Invocation of Mplus
 #' @author Sean Ho <anchor@seanho.com>
 #'
-mp_run <- function(.obj, name = "mp", run = 1, ...) {
+mplus <- function(.obj, name = "mp", run = 1, ...) {
   out <- utils::capture.output({
     suppressMessages({
       res <- MplusAutomation::mplusModeler(

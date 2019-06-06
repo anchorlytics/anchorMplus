@@ -34,7 +34,7 @@ is_identified <- function(.obj, param = "se") {
 #' @family Model diagnostics
 #' @author Sean Ho <anchor@seanho.com>
 #'
-mp_messages <- function(.obj, what = c("errors", "warnings")) {
+get_messages <- function(.obj, what = c("errors", "warnings")) {
   lapply(
     lapply(
       unlist(.obj$results[what], recursive = FALSE),
@@ -54,7 +54,7 @@ mp_messages <- function(.obj, what = c("errors", "warnings")) {
 #' stringr::str_replace_all(c(
 #'   "cov matrix (psi) is not positive definite. Variable x."
 #'   ), mp_abbrev)
-mp_abbrev <- c(
+msg_abbr <- c(
   "^.* may not be identified\\. .* parameter: (.*)$" = "Not identified: \\1",
   "^The condition number is .*$" = "",
   "^.* matrix (.*) is not positive definite\\..*$" = "Not positive definite: \\1",
