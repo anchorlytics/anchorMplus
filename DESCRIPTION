@@ -19,11 +19,13 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Remotes: anchorlytics/anchorUtils
 Imports: 
     stats,
     dplyr,
     purrr,
     MplusAutomation,
-    stringi
+    stringi,
+    anchorUtils
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
