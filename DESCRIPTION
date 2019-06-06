@@ -1,0 +1,8 @@
+Package: anchorMplus
+Title: R interface to Mplus
+Version: 0.0.0.9000
+Authors@R: as.person("Sean Ho <anchor@seanho.com> [aut, cre]")
+Description: Prepare data and syntax for Mplus and parse output.
+License: MIT
+Encoding: UTF-8
+LazyData: true
