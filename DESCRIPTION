@@ -25,3 +25,5 @@ Imports:
     purrr,
     MplusAutomation,
     stringi
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
