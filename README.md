@@ -1,6 +1,10 @@
 # anchorMplus
 ## An R interface to Mplus: prepare data and input, parse output
 
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: end -->
+
 Mplus is leading commercial software for structural equation
 modelling (SEM).  It is, however, rather particular in its input requirements,
 and its output is hard to parse.  It is a command-line program that reads
