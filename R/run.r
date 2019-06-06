@@ -17,7 +17,9 @@
 #' @return an mplusObject with a $results section
 #'
 #' @export
-#' @family Mplus helpers
+#' @importFrom utils capture.output
+#' @importFrom MplusAutomation mplusModeler
+#' @family Invocation of Mplus
 #' @author Sean Ho <anchor@seanho.com>
 #'
 mp_run <- function(.obj, name = "mp", run = 1, ...) {

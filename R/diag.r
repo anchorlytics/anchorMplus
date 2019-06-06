@@ -11,7 +11,7 @@
 #' @return logical
 #'
 #' @export
-#' @family Mplus helpers
+#' @family Model diagnostics
 #' @author Sean Ho <anchor@seanho.com>
 #'
 is_identified <- function(.obj, param = "se") {
@@ -30,7 +30,8 @@ is_identified <- function(.obj, param = "se") {
 #' @return character vector of messages
 #'
 #' @export
-#' @family Mplus helpers
+#' @importFrom stringi stri_trans_totitle
+#' @family Model diagnostics
 #' @author Sean Ho <anchor@seanho.com>
 #'
 mp_messages <- function(.obj, what = c("errors", "warnings")) {
@@ -46,7 +47,7 @@ mp_messages <- function(.obj, what = c("errors", "warnings")) {
 #' Abbreviations for common phrases in Mplus messages
 #'
 #' @export
-#' @family Mplus helpers
+#' @family Model diagnostics
 #' @author Sean Ho <anchor@seanho.com>
 #'
 #' @examples

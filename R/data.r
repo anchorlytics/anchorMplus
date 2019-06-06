@@ -7,13 +7,15 @@
 #' A variable is deemed dichotomous if it has at most two unique non-NA values,
 #' regardless of its type.
 #'
+#' The return value is a single string that can be passed to
+#' \code{\link[MplusAutomation]{mplusObject}} in the `VARIABLE` argument
+#'
 #' @param .data data frame with proper column types
-#' @param ... additional options passed to [mp_wordwrap()]
-#' @return a single string that can be passed to
-#'   [MplusAutomation::mplusObject()] in the `VARIABLE` argument
+#' @param ... additional options passed to \code{\link{wordwrap}}
+#' @return a single string starting with `CATEGORICAL =`
 #'
 #' @export
-#' @family Mplus helpers
+#' @family Data preparation
 #' @author Sean Ho <anchor@seanho.com>
 #'
 #' @examples
@@ -23,7 +25,7 @@
 #'   Engine_V_shaped_or_Straight = ordered(mtcars$vs),
 #'   Transmission_Automatic_or_Manual = ordered(mtcars$am))))
 mp_cat <- function(.data, ...) {
-  mp_wordwrap(c(
+  wordwrap(c(
     "CATEGORICAL =",
     names(which(sapply(.data, function(col) {
       is.ordered(col) | length(na.omit(unique(col))) <= 2

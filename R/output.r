@@ -35,7 +35,8 @@
 #'   each of which is a matrix.
 #'
 #' @export
-#' @family Mplus helpers
+#' @import MplusAutomation
+#' @family Output parsing
 #' @author Sean Ho <anchor@seanho.com>
 parse_tech4 <- function(.text) {
   output <- MplusAutomation:::parse_into_sections(.text)
