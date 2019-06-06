@@ -6,3 +6,5 @@
 .Ruserdata
 docs/
 inst/doc
+NAMESPACE
+man/
