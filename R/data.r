@@ -15,6 +15,7 @@
 #' @return a single string starting with `CATEGORICAL =`
 #'
 #' @export
+#' @importFrom stats na.omit
 #' @family Data preparation
 #' @author Sean Ho <anchor@seanho.com>
 #'
