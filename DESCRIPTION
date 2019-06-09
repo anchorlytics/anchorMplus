@@ -10,7 +10,7 @@ Description: Mplus is leading commercial software for structural equation
   invoke Mplus for the SEM fit.
   This package is heavily inspired by and owes a great debt to
   Michael Hallquist's MplusAutomation package.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://mplus.anchorlytics.com, https://github.com/anchorlytics/anchorMplus
