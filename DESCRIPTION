@@ -26,6 +26,7 @@ Imports:
     purrr,
     MplusAutomation,
     stringi,
+    stringr,
     anchorUtils
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1

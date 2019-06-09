@@ -44,19 +44,27 @@ get_messages <- function(.obj, what = c("errors", "warnings")) {
   )
 }
 
-#' Abbreviations for common phrases in Mplus messages
+#' Abbreviate common phrases in Mplus messages
+#'
+#' @param x character vector, e.g., of Mplus messages
+#' @return character vector, each message abbreviated
 #'
 #' @export
+#' @importFrom stringr str_replace_all
 #' @family Model diagnostics
 #' @author Sean Ho <anchor@seanho.com>
 #'
 #' @examples
-#' stringr::str_replace_all(c(
-#'   "cov matrix (psi) is not positive definite. Variable x."
-#'   ), mp_abbrev)
-msg_abbr <- c(
-  "^.* may not be identified\\. .* parameter: (.*)$" = "Not identified: \\1",
-  "^The condition number is .*$" = "",
-  "^.* matrix (.*) is not positive definite\\..*$" = "Not positive definite: \\1",
-  "^.* (best loglikelihood value was not replicated).*$" = "\\1"
-)
+#' abbr_msg("cov matrix (psi) is not positive definite. Variable x.")
+#'
+abbr_msg <- function(x) {
+  stringr::str_replace_all(
+    x,
+    c(
+      "^.* may not be identified\\. .* parameter: (.*)$" = "Not identified: \\1",
+      "^The condition number is .*$" = "",
+      "^.* matrix (.*) is not positive definite\\..*$" = "Not positive definite: \\1",
+      "^.* (best loglikelihood value was not replicated).*$" = "\\1"
+    )
+  )
+}
