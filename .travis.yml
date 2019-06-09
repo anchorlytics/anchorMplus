@@ -1,5 +1,6 @@
 ---
 language: r
+before_script: Rscript -e 'devtools::document()'
 before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
 deploy:
   provider: script

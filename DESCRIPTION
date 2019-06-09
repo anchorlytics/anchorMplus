@@ -28,5 +28,6 @@ Imports:
     stringi,
     stringr,
     anchorUtils
-Roxygen: list(markdown = TRUE)
+Roxygen: list(markdown = TRUE,
+    roclets = c('rd', 'collate', 'namespace', 'vignette'))
 RoxygenNote: 6.1.1
