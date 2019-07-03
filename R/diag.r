@@ -5,7 +5,7 @@
 #' This macro uses the existence of estimated standard errors as a proxy
 #' for determining if the model was identified.
 #'
-#' @param .obj mplusObject fitted by MplusAutomation::mplusModeler()
+#' @param .obj mplusObject fitted by \code{\link[MplusAutomation]{mplusModeler}}
 #' @param param character name of field to look for in parameter list.
 #'   By default, look for existence of standard errors.
 #' @return logical
