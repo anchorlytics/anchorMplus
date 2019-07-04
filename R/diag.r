@@ -25,7 +25,7 @@ is_identified <- function(.obj, param = "se") {
 #' concatenate multi-line messages,
 #' and convert case so messages are not all-caps.
 #'
-#' @param .obj mplusObject fitted by MplusAutomation::mplusModeler()
+#' @param .obj mplusObject fitted by \code{\link[MplusAutomation]{mplusModeler}}
 #' @param what character vector of fields to pull from .obj
 #' @return character vector of messages
 #'

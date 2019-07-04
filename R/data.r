@@ -8,11 +8,11 @@
 #' regardless of its type.
 #'
 #' The return value is a single string that can be passed to
-#' \code{\link[MplusAutomation]{mplusObject}} in the `VARIABLE` argument
+#' \code{\link[MplusAutomation]{mplusObject}} in the \code{VARIABLE} argument
 #'
 #' @param .data data frame with proper column types
 #' @param ... additional options passed to \code{\link{wordwrap}}
-#' @return a single string starting with `CATEGORICAL =`
+#' @return a single string starting with \code{CATEGORICAL =}
 #'
 #' @export
 #' @importFrom stats na.omit

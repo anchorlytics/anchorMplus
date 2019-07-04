@@ -2,29 +2,33 @@
 
 #' Parse Mplus TECH4 output
 #'
-#' Mplus' `TECH4` output contains first- and second-order estimated **moments**
+#' Mplus' \code{TECH4} output contains first- and second-order estimated \strong{moments}
 #' for the latent factors.
-#' Unfortunately, the `MplusAutomation` library is still buggy
+#' Unfortunately, the \code{MplusAutomation} library is still buggy
 #' in parsing this section; hence this function.
 #'
-#' For **single-group** models, the TECH4 section has one subsection,
+#' For \strong{single-group} models, the \code{TECH4} section has one subsection,
 #' containing the following moments estimated for the latent factors:
 #'
-#' 1. **Means**
-#' 2. **Covariance** matrix
-#' 3. **Correlation** matrix
+#' \enumerate{
+#'   \item{Means}
+#'   \item{Covariance matrix}
+#'   \item{Correlation matrix}
+#' }
 #'
-#' If **standard errors** are available, a second subsection is added with
-#' the following for **each** of the means, covariance, and correlation:
+#' If \strong{standard errors} are available, a second subsection is added with
+#' the following for \strong{each} of the means, covariance, and correlation:
 #'
-#' 1. **Standard error**
-#' 2. **Ratio** of SE/estimate
-#' 3. **P-value** on estimate differing from zero
+#' \enumerate{
+#'   \item{Standard error}
+#'   \item{Ratio of SE/estimate}
+#'   \item{P-value on estimate differing from zero}
+#' }
 #'
 #' Hence, there are 9 items within this second subsection.
 #'
-#' For **multi-group** models, each group has its own subsection.
-#' If standard errors are available, there are **twice** as many subsections as
+#' For \strong{multi-group} models, each group has its own subsection.
+#' If standard errors are available, there are \strong{twice} as many subsections as
 #' there are groups: first all the moments for each of the groups, then all the
 #' standard errors for each of the groups.
 #'
