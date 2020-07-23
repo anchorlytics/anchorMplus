@@ -30,4 +30,4 @@ Imports:
     anchorUtils
 Roxygen: list(markdown = TRUE,
     roclets = c('rd', 'collate', 'namespace', 'vignette'))
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1

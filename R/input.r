@@ -18,6 +18,7 @@
 #'
 #' @examples
 #' cat(wordwrap(rownames(mtcars)))
+#'
 wordwrap <- function(x, width = 80, exdent = 4, ...) {
   paste(strwrap(
     paste(x, collapse = " "),
