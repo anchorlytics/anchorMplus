@@ -23,6 +23,7 @@ Remotes: anchorlytics/anchorUtils
 Imports: 
     stats,
     dplyr,
+    rlang,
     purrr,
     MplusAutomation,
     stringi,

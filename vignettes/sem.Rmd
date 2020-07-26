@@ -7,16 +7,27 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
-
 ```{r setup}
+options(conflicts.policy = "depends.ok")
 library(anchorMplus)
+library(psych)
+library(dplyr)
 ```
 
 The use of this package is demonstrated by a complete CFA on the famous
 `psych::bfi` dataset.
+
+# Column Types
+
+Annotate each column with an R data type.
+
+```{r types}
+bfi <-
+  psych::bfi %>%
+  mutate(across(matches("^[A-Z][1-5]$"), ordered, 1:6)) %>% 
+  mutate(across("gender", factor, 1:2, labels = c("M", "F"))) %>% 
+  mutate(across("education", ordered, 1:5))
+
+bfi
+```
+
