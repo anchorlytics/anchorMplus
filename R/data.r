@@ -44,14 +44,15 @@ mp_cat <- function(.data, ...) {
 #'   \item{Character}{Dropped completely. If you want to preserve these,
 #'   convert them beforehand to factor.}
 #'   \item{Ordinal}{\strong{Levels} are converted to integer.}
-#'   \item{Factor}{Converted to integer.}
-#'   \item{Logical}{Converted to integer.}
+#'   \item{All others}{Converted to integer.}
 #' }
 #'
 #' @param .data data frame with columns in standard R types
 #' @return data frame with only numeric/integer columns
 #'
 #' @export
+#' @importFrom dplyr select mutate across everything `%>%`
+#' @importFrom rlang is_character
 #' @family Data preparation
 #' @author Sean Ho <anchor@seanho.com>
 #'
@@ -59,8 +60,7 @@ mp_cat <- function(.data, ...) {
 #'
 mp_numeric <- function(.data) {
   .data %>%
-    select(where(is_character)) %>%
-    mutate(across(where(is.ordered),  ~as.integer(levels(.))[.])) %>%
-    mutate(across(where(is.factor), as.integer)) %>%
-    mutate(across(where(is.logical), as.integer))
+    select(!tidyselect:::where(is_character)) %>%
+    mutate(across(tidyselect:::where(is.ordered),  ~as.integer(levels(.))[.])) %>%
+    mutate(across(everything(), as.integer))
 }
