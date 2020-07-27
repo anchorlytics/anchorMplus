@@ -2,4 +2,7 @@
 destination: docs
 url: "https://mplus.anchorlytics.com/"
 title: R Interface to Mplus
+authors:
+  Sean Ho:
+    href: https://seanho.com/
 ---
