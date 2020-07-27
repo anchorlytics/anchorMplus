@@ -1,8 +1,8 @@
 ---
-title: "SEM Example"
+title: "Getting Started"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{SEM Example}
+  %\VignetteIndexEntry{Getting Started}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,20 +14,29 @@ library(psych)
 library(dplyr)
 ```
 
-The use of this package is demonstrated by a complete CFA on the famous
-`psych::bfi` dataset.
+Say we want to do a CFA on the famous Big Five personality traits in
+the `psych::bfi` dataset.
+
+```{r bfi}
+BFI <- psych::bfi
+```
 
 # Column Types
 
 Annotate each column with an R data type.
 
 ```{r types}
-bfi <-
-  psych::bfi %>%
+BFI %<>% 
   mutate(across(matches("^[A-Z][1-5]$"), ordered, 1:6)) %>% 
   mutate(across("gender", factor, 1:2, labels = c("M", "F"))) %>% 
   mutate(across("education", ordered, 1:5))
 
-bfi
+BFI
+```
+
+Ordinal or dichotomous items are designated in Mplus syntax as follows:
+
+```{r mp_cat}
+mp_cat(BFI) %>% cat
 ```
 
