@@ -2,25 +2,26 @@
 
 #' Run Mplus and save full output
 #'
-#' MplusAutomation::mplusModeler() runs Mplus and augments the
-#' mplusOjbect with a $results element.
+#' [MplusAutomation::mplusModeler()] runs Mplus and augments the
+#' `mplusObject` with a `$results` element.
 #' This wrapper saves the full text output from Mplus in an element named
-#' $stdout within that $results element.
+#' `$stdout` within that `$results` element.
 #'
-#' This function has side-effects, just like mplusModeler(), in that
-#' it leaves Mplus input, output, and savedata files in the current directory.
+#' This function has side-effects, just like [MplusAutomation::mplusModeler()],
+#' in that it leaves Mplus input, output, and savedata files in the current
+#' directory.
 #'
-#' @param .obj mplusObject as created by MplusAutomation::mplusObject()
+#' @param .obj mplusObject as created by [MplusAutomation::mplusObject()]
 #' @param name basename for generated Mplus files (no extension)
-#' @param run set to 0 for dry-run (passed to MplusAutomation::mplusModeler())
-#' @param ... additional options passed to MplusAutomation::mplusModeler()
-#' @return an mplusObject with a $results section
+#' @param run set to 0 for dry-run (passed to [MplusAutomation::mplusModeler()])
+#' @param ... additional options passed to [MplusAutomation::mplusModeler()]
+#' @return an `mplusObject` with a `$results` section
 #'
-#' @export
 #' @importFrom utils capture.output
 #' @importFrom MplusAutomation mplusModeler
+#'
+#' @export
 #' @family Invocation of Mplus
-#' @author Sean Ho <anchor@seanho.com>
 #'
 mplus <- function(.obj, name = "mp", run = 1, ...) {
   out <- utils::capture.output({

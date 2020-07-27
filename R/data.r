@@ -8,16 +8,16 @@
 #' regardless of its type.
 #'
 #' The return value is a single string that can be passed to
-#' \code{\link[MplusAutomation]{mplusObject}} in the \code{VARIABLE} argument
+#' [MplusAutomation::mplusObject()] in the `VARIABLE` argument
 #'
 #' @param .data data frame with proper column types
-#' @param ... additional options passed to \code{\link{wordwrap}}
-#' @return a single string starting with \code{CATEGORICAL =}
+#' @param ... additional options passed to [base::wordwrap()]
+#' @return a single string starting with `CATEGORICAL =`
+#'
+#' @importFrom stats na.omit
 #'
 #' @export
-#' @importFrom stats na.omit
 #' @family Data preparation
-#' @author Sean Ho <anchor@seanho.com>
 #'
 #' @examples
 #' cat(mp_cat(data.frame(
@@ -39,22 +39,19 @@ mp_cat <- function(.data, ...) {
 #'
 #' Mplus requires numeric input data.  This function converts each column
 #' of a data frame according to its type:
-#'
-#' \describe{
-#'   \item{Character}{Dropped completely. If you want to preserve these,
-#'   convert them beforehand to factor.}
-#'   \item{Ordinal}{\strong{Levels} are converted to integer.}
-#'   \item{All others}{Converted to integer.}
-#' }
+#' + **Character**: Dropped completely. If you want to preserve these,
+#'   convert them beforehand to factor.
+#' + **Ordinal**: Levels are converted to integer.
+#' + **All others**: Converted to integer.
 #'
 #' @param .data data frame with columns in standard R types
 #' @return data frame with only numeric/integer columns
 #'
-#' @export
 #' @importFrom dplyr select mutate across everything `%>%`
 #' @importFrom rlang is_character
+#'
+#' @export
 #' @family Data preparation
-#' @author Sean Ho <anchor@seanho.com>
 #'
 #' @examples
 #'

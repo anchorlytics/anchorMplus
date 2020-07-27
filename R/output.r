@@ -2,50 +2,41 @@
 
 #' Parse Mplus TECH4 output
 #'
-#' Mplus' \code{TECH4} output contains first- and second-order estimated
-#' \strong{moments} for the latent factors.
-#' Unfortunately, the \code{MplusAutomation} library is still buggy
+#' Mplus' `TECH4` output contains first- and second-order estimated
+#' **moments** for the latent factors.
+#' Unfortunately, the `MplusAutomation` library is still buggy
 #' in parsing this section; hence this function.
 #'
-#' For \strong{single-group} models, the \code{TECH4} section has one subsection,
+#' For **single-group** models, the `TECH4` section has one subsection,
 #' containing the following moments estimated for the latent factors:
+#' + **Means**
+#' + **Covariance** matrix
+#' + **Correlation** matrix
 #'
-#' \enumerate{
-#'   \item \strong{Means}
-#'   \item \strong{Covariance} matrix
-#'   \item \strong{Correlation} matrix
-#' }
-#'
-#' If \strong{standard errors} are available, a second subsection is added with
-#' the following for \strong{each} of the means, covariance, and correlation:
-#'
-#' \enumerate{
-#'   \item \strong{Standard error}
-#'   \item \strong{Ratio} of SE/estimate
-#'   \item \strong{P-value} on estimate differing from zero
-#' }
+#' If **standard errors** are available, a second subsection is added with
+#' the following for **each** of the means, covariance, and correlation:
+#' + Standard **error**
+#' + **Ratio** of SE to the point estimate
+#' + **P-value** on the estimate differing from zero
 #'
 #' Hence, there are 9 items within this second subsection.
 #'
-#' For \strong{multi-group} models, each group has its own subsection.
-#' If standard errors are available, there are \strong{twice} as many subsections
+#' For **multi-group** models, each group has its own subsection.
+#' If standard errors are available, there are **twice** as many subsections
 #' as there are groups: first all the moments for each of the groups, then all
 #' the standard errors for each of the groups.
 #'
 #' TODO: if no groups, returns a single group named "X"
 #' TODO: extract vector of means
 #'
-#' @param .text contents of an Mplus output file, as read by
-#'   \code{\link[base]{readLines}}
+#' @param .text contents of an Mplus output file, as read by [base::readLines()]
 #' @return a list with one entry for each group.
-#'   Each entry has members 'cov' and 'cor',
-#'   each of which has members 'est', 'se', 'ratio', and 'p',
+#'   Each entry has members `cov` and `cor`,
+#'   each of which has members `est`, `se`, `ratio`, and `p`,
 #'   each of which is a matrix.
 #'
 #' @export
-#' @import MplusAutomation
 #' @family Output parsing
-#' @author Sean Ho <anchor@seanho.com>
 #'
 parse_tech4 <- function(.text) {
   output <- MplusAutomation:::parse_into_sections(.text)

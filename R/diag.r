@@ -5,14 +5,13 @@
 #' This macro uses the existence of estimated standard errors as a proxy
 #' for determining if the model was identified.
 #'
-#' @param .obj mplusObject fitted by \code{\link[MplusAutomation]{mplusModeler}}
+#' @param .obj mplusObject fitted by [MplusAutomation::mplusModeler()]
 #' @param param character name of field to look for in parameter list.
 #'   By default, look for existence of standard errors.
 #' @return logical
 #'
 #' @export
 #' @family Model diagnostics
-#' @author Sean Ho <anchor@seanho.com>
 #'
 is_identified <- function(.obj, param = "se") {
   # first set in $parameters is usually unstandardized
@@ -25,14 +24,14 @@ is_identified <- function(.obj, param = "se") {
 #' concatenate multi-line messages,
 #' and convert case so messages are not all-caps.
 #'
-#' @param .obj mplusObject fitted by \code{\link[MplusAutomation]{mplusModeler}}
+#' @param .obj mplusObject fitted by [MplusAutomation::mplusModeler()]
 #' @param what character vector of fields to pull from .obj
 #' @return character vector of messages
 #'
-#' @export
 #' @importFrom stringi stri_trans_totitle
+#'
+#' @export
 #' @family Model diagnostics
-#' @author Sean Ho <anchor@seanho.com>
 #'
 get_messages <- function(.obj, what = c("errors", "warnings")) {
   lapply(
@@ -49,10 +48,10 @@ get_messages <- function(.obj, what = c("errors", "warnings")) {
 #' @param x character vector, e.g., of Mplus messages
 #' @return character vector, each message abbreviated
 #'
-#' @export
 #' @importFrom stringr str_replace_all
+#'
+#' @export
 #' @family Model diagnostics
-#' @author Sean Ho <anchor@seanho.com>
 #'
 #' @examples
 #' abbr_msg("cov matrix (psi) is not positive definite. Variable x.")
