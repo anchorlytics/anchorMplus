@@ -26,14 +26,15 @@
 #' as there are groups: first all the moments for each of the groups, then all
 #' the standard errors for each of the groups.
 #'
-#' TODO: if no groups, returns a single group named "X"
-#' TODO: extract vector of means
-#'
 #' @param .text contents of an Mplus output file, as read by [base::readLines()]
 #' @return a list with one entry for each group.
 #'   Each entry has members `cov` and `cor`,
 #'   each of which has members `est`, `se`, `ratio`, and `p`,
 #'   each of which is a matrix.
+#'
+#' @details # TODO
+#' + if no groups, returns a single group named "X"
+#' + extract vector of means
 #'
 #' @export
 #' @family Output parsing
